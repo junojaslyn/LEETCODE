@@ -14,3 +14,26 @@ class Solution {
         return original == reversed;
     }
 }
+
+/*
+    Palindrome Number Logic (Short Explanation)
+
+    1. Negative numbers are not palindrome because of the '-' sign.
+       So if x < 0, immediately return false.
+
+    2. Store the original number in a variable so we can compare later.
+
+    3. Reverse the number digit-by-digit:
+         - Extract the last digit using x % 10
+         - Build the reversed number using: reversed = reversed * 10 + digit
+         - Remove the last digit from x using x / 10
+
+       Example: x = 121
+         reversed becomes 1 → 12 → 121
+
+    4. Finally, compare original with reversed.
+         If both are equal → the number is a palindrome.
+
+    This method avoids converting the number into a string and uses only math operations.
+*/
+
