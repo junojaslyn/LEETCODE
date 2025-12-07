@@ -1,0 +1,28 @@
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        if (strs.length == 0) return "";
+        String prefix = strs[0];
+        for (int i = 1; i < strs.length; i++) {
+            while (strs[i].indexOf(prefix) != 0) {
+                prefix = prefix.substring(0, prefix.length() - 1);
+                if (prefix.isEmpty()) 
+                    return "";
+            }
+        }
+
+        return prefix;
+    }
+}
+
+//Start with the first string as the prefix.
+
+Compare this prefix with each remaining string:
+
+If the string does not start with the prefix
+(checked by indexOf(prefix) != 0)
+
+Reduce the prefix by removing its last character.
+
+Keep shrinking until it matches.
+
+If prefix becomes empty → return ""//
