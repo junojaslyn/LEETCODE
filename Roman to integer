@@ -1,0 +1,37 @@
+class Solution {
+    public int romanToInt(String s) {
+        
+        int total = 0;
+        int prev = 0;
+
+        for (int i = s.length() - 1; i >= 0; i--) {
+            int value = 0;
+            char c = s.charAt(i);
+            if (c == 'I') value = 1;
+            else if (c == 'V') value = 5;
+            else if (c == 'X') value = 10;
+            else if (c == 'L') value = 50;
+            else if (c == 'C') value = 100;
+            else if (c == 'D') value = 500;
+            else if (c == 'M') value = 1000;
+            if (value < prev) {
+                total -= value;
+            } else {
+                total += value;
+            }
+            prev = value;
+        }
+        return total;
+    }
+}
+
+
+//We scan the string from right to left:
+
+If the current Roman value is less than the previous value, subtract it
+Example: IV → 1 < 5 → subtract → total = 4
+
+Otherwise, add it
+Example: VI → 1 < 5 → add → total = 6
+
+The prev variable keeps track of the previous Roman value.//
