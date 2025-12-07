@@ -1,0 +1,16 @@
+class Solution {
+    public int countOdds(int low, int high) {
+        int count = (high - low)/2;
+        if(low % 2!= 0 || high % 2 != 0 ){
+            count ++;
+        }
+        return count;
+        
+    }
+}
+//low = 3, high = 7
+Difference = 4
+4 / 2 = 2
+low is odd OR high is odd → +1
+Total = 3
+//
